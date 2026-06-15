@@ -28,7 +28,7 @@ export default function QualifyPage() {
         </Link>
       </header>
 
-      <main className="flex-1 flex items-start justify-center px-6 py-12">
+      <main className="flex-1 flex items-center justify-center px-6 py-12">
         <QualifyForm />
       </main>
     </div>
