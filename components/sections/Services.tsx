@@ -1,5 +1,7 @@
 'use client'
 
+'use client'
+
 const services = [
   {
     icon: '🤖',
