@@ -1,110 +1,104 @@
 'use client'
 
-'use client'
-
 const services = [
   {
     icon: '🤖',
     title: 'AI & Automation',
-    tagline: 'Let machines handle the repetitive stuff',
-    description:
-      'From AI chatbots and customer support automation to invoice processing and social media scheduling — we build intelligent systems that run your business around the clock.',
-    features: [
-      'AI chatbots & virtual assistants',
-      'Workflow & process automation',
-      'AI content & email systems',
-      'WhatsApp & CRM automation',
-      'Lead gen & follow-up systems',
-    ],
-    gradient: 'from-violet-500 to-indigo-600',
+    description: 'Stop doing things manually. We build AI systems that handle your customer support, social media, emails, invoices, and follow-ups — 24/7, without you lifting a finger.',
+    features: ['Chatbots & AI assistants', 'Workflow automation', 'CRM & email automation', 'AI content systems'],
     color: '#818CF8',
-    bg: 'rgba(99,102,241,0.07)',
-    border: 'rgba(99,102,241,0.15)',
+    bg: 'rgba(99,102,241,0.06)',
+    border: 'rgba(99,102,241,0.12)',
+    glow: 'rgba(99,102,241,0.2)',
   },
   {
     icon: '📱',
     title: 'App Development',
-    tagline: 'Mobile & web apps that users love',
-    description:
-      'We build fast, scalable applications for iOS, Android, and web. Whether you need an MVP in 6 weeks or a full enterprise platform — we deliver.',
-    features: [
-      'iOS & Android mobile apps',
-      'Web & SaaS platforms',
-      'E-commerce & marketplaces',
-      'Booking & scheduling systems',
-      'Customer portals & dashboards',
-    ],
-    gradient: 'from-cyan-500 to-blue-600',
+    description: 'iOS, Android, and web apps built fast and built to scale. From a simple MVP to a full marketplace — we ship products users actually want to use.',
+    features: ['Mobile apps (iOS & Android)', 'Web & SaaS platforms', 'E-commerce & marketplaces', 'Booking & scheduling apps'],
     color: '#22D3EE',
-    bg: 'rgba(6,182,212,0.07)',
-    border: 'rgba(6,182,212,0.15)',
+    bg: 'rgba(6,182,212,0.06)',
+    border: 'rgba(6,182,212,0.12)',
+    glow: 'rgba(6,182,212,0.2)',
   },
   {
     icon: '📈',
     title: 'Business Growth',
-    tagline: 'Systems that scale with your ambition',
-    description:
-      'CRM systems, marketing funnels, reporting dashboards, and growth infrastructure — we design and build the digital backbone your business needs to scale fast.',
-    features: [
-      'CRM & sales systems',
-      'Marketing automation funnels',
-      'Business dashboards & analytics',
-      'Referral & loyalty programmes',
-      'Lead generation systems',
-    ],
-    gradient: 'from-emerald-500 to-teal-600',
+    description: 'The digital infrastructure that makes scaling possible. CRMs, dashboards, sales funnels, and marketing systems designed to compound your results.',
+    features: ['CRM & sales systems', 'Marketing automation', 'Analytics dashboards', 'Lead generation funnels'],
     color: '#34D399',
-    bg: 'rgba(52,211,153,0.07)',
-    border: 'rgba(52,211,153,0.15)',
+    bg: 'rgba(52,211,153,0.06)',
+    border: 'rgba(52,211,153,0.12)',
+    glow: 'rgba(52,211,153,0.2)',
   },
 ]
 
 export default function Services() {
   return (
-    <section id="services" className="py-28 px-6" style={{ background: '#030309' }}>
-      <div className="max-w-7xl mx-auto">
+    <section id="services" className="py-24 px-6" style={{ background: '#030309' }}>
+      <div className="max-w-6xl mx-auto">
+
+        {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-medium mb-3 uppercase tracking-widest" style={{ color: '#6366F1' }}>
+          <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#6366F1', letterSpacing: '0.15em' }}>
             What we do
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Everything you need to
-            <span className="gradient-text"> grow</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+            Everything you need to{' '}
+            <span style={{
+              background: 'linear-gradient(135deg, #818CF8, #A78BFA, #22D3EE)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>grow</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: '#64748B' }}>
-            We cover the full stack — from intelligent automation to beautiful apps to growth systems that compound.
+          <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: '#64748B' }}>
+            We cover the full stack — AI automation, custom apps, and the growth systems that compound.
           </p>
         </div>
 
+        {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <div
               key={i}
-              className="rounded-2xl p-8 flex flex-col transition-all duration-300 group cursor-default"
-              style={{ background: s.bg, border: `1px solid ${s.border}` }}
+              className="rounded-2xl p-8 flex flex-col transition-all duration-300"
+              style={{
+                background: s.bg,
+                border: `1px solid ${s.border}`,
+              }}
               onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-4px)'
-                e.currentTarget.style.boxShadow = `0 20px 60px ${s.bg.replace('0.07', '0.25')}`
+                e.currentTarget.style.transform = 'translateY(-6px)'
+                e.currentTarget.style.boxShadow = `0 24px 48px ${s.glow}`
+                e.currentTarget.style.borderColor = s.color.replace(')', ', 0.3)').replace('rgb', 'rgba')
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)'
                 e.currentTarget.style.boxShadow = 'none'
+                e.currentTarget.style.borderColor = s.border
               }}
             >
-              <div className="text-4xl mb-5">{s.icon}</div>
-              <span className="text-xs font-medium uppercase tracking-widest mb-2" style={{ color: s.color }}>
-                {s.tagline}
-              </span>
+              {/* Icon */}
+              <div
+                className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-6"
+                style={{ background: s.bg, border: `1px solid ${s.border}` }}
+              >
+                {s.icon}
+              </div>
+
+              {/* Title */}
               <h3 className="text-xl font-bold text-white mb-3">{s.title}</h3>
-              <p className="text-sm mb-6 flex-1" style={{ color: '#64748B', lineHeight: '1.7' }}>
+
+              {/* Description */}
+              <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: '#64748B' }}>
                 {s.description}
               </p>
-              <ul className="space-y-2">
+
+              {/* Features */}
+              <ul className="space-y-2.5 pt-6" style={{ borderTop: `1px solid ${s.border}` }}>
                 {s.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-2 text-sm" style={{ color: '#94A3B8' }}>
-                    <svg width="14" height="14" fill="none" stroke={s.color} strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m5 13 4 4L19 7" />
-                    </svg>
+                  <li key={j} className="flex items-center gap-3 text-sm" style={{ color: '#94A3B8' }}>
+                    <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: s.color }} />
                     {f}
                   </li>
                 ))}
